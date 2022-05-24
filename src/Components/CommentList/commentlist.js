@@ -9,9 +9,9 @@ function CommentList() {
         <div className="comment__section">
             {eachComment.map((item) => (
                 <Comment
-                name = { item.name }
-                comment = { item.comment }
-                timestamp = { new Date(item.timestamp).toLocaleDateString() }
+                    name={item.name}
+                    comment={item.comment}
+                    timestamp={new Date(item.timestamp).toLocaleDateString()}
                 />
             ))}
         </div>
