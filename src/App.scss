@@ -1,0 +1,12 @@
+@use './Styles/partials/fonts' as *;
+@use './Styles/partials/colors' as *;
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Avenir Next, Helvetica, sans-serif;
+  color: $BrainFlix-Black;
+}

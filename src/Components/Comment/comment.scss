@@ -1,0 +1,43 @@
+@use '../../Styles/partials/colors' as *;
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $Mercury;
+    padding-bottom: 1rem;
+
+    &__pfp--empty{
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        margin-top: 1rem;
+        background-color: $Mercury;
+    }
+
+    &__container {
+        width: 15rem;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-name {
+            font-size: 0.8rem;
+        }
+
+        &-date {
+            font-size: 0.8rem;
+            color: $Silver;
+        }
+    }
+    &__bottom {
+        overflow-wrap: break-word;
+
+        &-comment {
+            margin: 0;
+            font-size: 0.8rem;
+        }
+    }
+}
