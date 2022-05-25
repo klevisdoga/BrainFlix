@@ -1,0 +1,15 @@
+@use '../../Styles/partials/colors' as *;
+@use '../../Styles/partials/fonts' as *;
+
+.video__list{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 0;
+
+    &-title{
+        font-size: .801rem;
+        color: $Silver;
+        margin-top: 0;
+    }
+}

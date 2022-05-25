@@ -1,0 +1,33 @@
+@use '../../Styles/partials/colors' as *;
+@use '../../Styles/partials/fonts' as *;
+
+.video__list-video{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 18rem;
+
+    &-thumbnail{
+        width: 6.3rem;
+        height: 3.7rem;
+        object-fit: cover;
+        border-radius: 4px;
+        background: $Mercury;
+        margin: 1rem 1rem 0 0;
+    }
+
+    &-text{
+        display: flex;
+        flex-direction: column;
+        width: 10rem;
+    }
+
+    &-title{
+        font-size: .801rem;
+    }
+
+    &-channel{
+        font-size: .801rem;
+    }
+}
