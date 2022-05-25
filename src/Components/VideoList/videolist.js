@@ -1,22 +1,22 @@
 import NextVideo from '../NextVideo/nextvideo';
 import './videolist.scss';
-import vidsList from '../../Data/videos.json';
 
-console.log(vidsList);
-
-export default function VideoList() {
-
-    const vids = vidsList;
+export default function VideoList({currentVideo, sidebarVids, changeVid, activeVid}) {
 
     return(
         <section className="video__list">
             <h2 className='video__list-title'>NEXT VIDEOS</h2>
-            {vids.map((item) => (
+            {sidebarVids
+            .filter(video => video.id !== currentVideo.id)
+            .map((item) => (
                 <NextVideo
                     key={item.id}
+                    id={item.id}
                     image={item.image}
                     title={item.title}
                     channel={item.channel}
+                    changeVid={changeVid}
+                    isActive={item.id === activeVid}
                 />
             ))}
         </section>

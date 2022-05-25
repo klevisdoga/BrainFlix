@@ -4,6 +4,7 @@ import comments from '../../Data/video-details.json';
 function CommentList() {
 
     const eachComment = comments[0].comments;
+    
 
     return (
         <div className="comment__section">
