@@ -12,33 +12,50 @@ class App extends React.Component {
 
   state = {
 
-    currentVideo: longList[0],
     sidebarVids: shortList,
 
     fullList: longList,
 
-    activeVid: null
+    activeVid: longList[0].id,
 
   }
 
   changeVid = (id) => {
-    this.setState({activeVid: id})
-    
+    this.setState({ activeVid: id })
+
   }
-  
+
 
   render() {
 
     return (
       <div className="App">
         <Header />
-        <Video />
-        <Comments />
-        <VideoList 
-        currentVideo={this.state.currentVideo}
-        sidebarVids={this.state.sidebarVids}
-        changeVid={this.changeVid}
-        activeVid={this.state.activeVid}
+        {this.state.fullList
+        .filter(video => video.id === this.state.activeVid)
+        .map((item) => (
+        <Video
+          key={item.id}
+          id={item.id}
+          image={item.image}
+          title={item.title}
+          channel={item.channel}
+          timestamp={item.timestamp}
+          views={item.views}
+          likes={item.likes}
+          description={item.description}
+          />
+        ))}
+
+        <Comments
+          activeVid={this.state.activeVid}
+          fullList={this.state.fullList}
+        />
+        <VideoList
+          currentVideo={this.state.currentVideo}
+          sidebarVids={this.state.sidebarVids}
+          changeVid={this.changeVid}
+          activeVid={this.state.activeVid}
         />
       </div>
     );

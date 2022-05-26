@@ -2,12 +2,15 @@ import './comments.scss';
 import CommentForm from '../CommentForm/commentForm';
 import CommentList from '../CommentList/commentlist';
 
-function Comments() {
+function Comments({ activeVid, fullList }) {
 
     return (
         <section className="comments">
             <CommentForm />
-            <CommentList />
+            <CommentList 
+                activeVid={activeVid}
+                fullList={fullList}
+            />
         </section>
     )
 }

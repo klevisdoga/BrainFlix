@@ -2,7 +2,10 @@ import './nextvideo.scss';
 
 export default function NextVideo(props) {
 
- 
+  const clickHandler = () => {
+    console.log(props.id)
+    props.changeVid(props.id)
+ }
 
 
   return (
