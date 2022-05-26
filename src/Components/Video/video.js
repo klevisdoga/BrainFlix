@@ -7,9 +7,11 @@ function Video(props) {
 
     return (
         <div className='video'>
+            <div className='video__player-container'>
             <video className='video__player' poster={props.image} controls>
                 <source />
             </video>
+            </div>
             <div className='video__info'>
                 <h1 className='video__info-title'>{props.title}</h1>
                 <div className='video__info-sub'>
