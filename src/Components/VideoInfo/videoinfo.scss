@@ -1,0 +1,137 @@
+@use '../../Styles/partials/colors' as *;
+@use '../../Styles/partials/mixins' as *;
+
+.video__info {
+    padding: 0 1rem;
+
+    @include tablet{
+        padding: 0 2rem;
+    }
+
+    @include desktop{
+        padding-right: 0;
+        padding-left: 1rem;
+    }
+
+    &-title {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $Mercury;
+
+        @include tablet{
+            font-size: 2rem;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+
+    &-sub {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $Mercury;
+
+        @include tablet{
+            width: 100%;
+            padding-bottom: .5rem;
+        }
+    }
+
+    &-one {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+
+    &-channel {
+        font-size: 0.8rem;
+        margin: 0;
+
+        @include tablet{
+            font-size: .87rem
+        }
+    }
+
+    &-date {
+        @extend .video__info-channel;
+        color: $Silver;
+        padding-top: 1rem;
+
+        @include tablet{
+            padding-top: 0;
+            padding-left: 2rem;
+            font-size: .8rem
+        }
+    }
+
+    &-two {
+        @extend .video__info-one;
+        margin-right: 2rem;
+
+        @include tablet{
+            margin-right: 0;
+        }
+
+        @include desktop{
+            padding-right: 1.5rem;
+        }
+    }
+
+    &-views {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-title {
+            @extend .video__info-date;
+            padding-top: 0;
+            padding-left: 0.5rem;
+        }
+    }
+
+    &-likes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 1rem;
+
+        @include tablet{
+            padding-top: 0;
+            padding-left: 2rem;
+        }
+
+        &-title {
+            @extend .video__info-date;
+            padding-left: 0.5rem;
+            padding-top: 0;
+        }
+    }
+
+    &-description{
+        font-size: .801rem;
+
+        @include tablet{
+            padding-top: .5rem;
+            padding-right: 1.6rem;
+            margin-bottom: 2rem;
+            font-size: .87rem;
+            line-height: 1.3rem;
+        }
+
+        @include desktop{
+            font-size: .859rem;
+            padding-right: 1.5rem;
+            padding-bottom: 1rem;
+            line-height: 1.4rem;
+        }
+    }
+
+    &-comment-count{
+        @extend .video__info-channel;
+        font-weight: 700;
+    }
+}

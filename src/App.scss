@@ -1,5 +1,6 @@
 @use './Styles/partials/fonts' as *;
 @use './Styles/partials/colors' as *;
+@use './Styles/partials/mixins' as *;
 
 * {
   box-sizing: inherit;
@@ -9,4 +10,17 @@ body {
   box-sizing: border-box;
   font-family: Avenir Next, Helvetica, sans-serif;
   color: $BrainFlix-Black;
+}
+
+.videoinfo-and-list{
+  @include desktop{
+    display: flex;
+    padding: 1rem 6rem 0 6rem;
+  }
+}
+.videoinfo-and-comments{
+  @include desktop{
+    border-right: 1px solid $Mercury;
+    padding-bottom: 2rem;
+  }
 }

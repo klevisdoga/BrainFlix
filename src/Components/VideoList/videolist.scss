@@ -1,11 +1,16 @@
 @use '../../Styles/partials/colors' as *;
 @use '../../Styles/partials/fonts' as *;
+@use '../../Styles/partials/mixins' as *;
 
 .video__list{
     display: flex;
     flex-direction: column;
     padding: 1rem;
     padding-top: 0;
+
+    @include tablet{
+        padding: 1rem 2rem;
+    }
 
     &-title{
         font-size: .801rem;

@@ -1,4 +1,6 @@
 @use '../../Styles/partials/colors' as *;
+@use '../../Styles/partials/mixins' as *;
+
 
 .comment {
     display: flex;
@@ -6,16 +8,34 @@
     border-bottom: 1px solid $Mercury;
     padding-bottom: 1rem;
 
+    @include tablet{
+        margin-top: 1.6rem;
+    }
+
+    @include desktop{
+        padding-right: 1.5rem;
+        padding-bottom: 1.6rem;
+    }
+
     &__pfp--empty{
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
         margin-top: 1rem;
         background-color: $Mercury;
+
+        @include desktop{
+            margin-top: 0;
+        }
     }
 
     &__container {
-        width: 15rem;
+        width: 80%;
+
+        @include tablet{
+            width: 100%;
+            padding-left: 1.5rem;
+        }
     }
 
     &__top {
@@ -25,19 +45,42 @@
 
         &-name {
             font-size: 0.8rem;
+
+            @include tablet{
+                margin-bottom: .5rem;
+                margin-top: 0;
+                font-size: .87rem;
+            }
         }
 
         &-date {
             font-size: 0.8rem;
             color: $Silver;
+
+            @include tablet{
+                font-size: .87rem;
+            }
         }
     }
     &__bottom {
         overflow-wrap: break-word;
 
+        @include desktop{
+            padding-right: .4rem;
+        }
+
         &-comment {
             margin: 0;
             font-size: 0.8rem;
+
+            @include tablet{
+                font-size: .881rem;
+            }
         }
+    }
+}
+.comment:last-child{
+    @include desktop{
+        border-bottom: none;
     }
 }

@@ -1,14 +1,13 @@
 import Comment from "../Comment/comment"
-import uuid from 'uniqid';
+import {v4 as uuid } from 'uuid';
 
 function CommentList({activeVid, fullList}) {
-
     return (
         <div className="comment__section">
 
             <Comment 
-            key={uuid}
-            fullList={fullList.find(video => video.id === activeVid)}
+            key={uuid()}
+            currentVideo={fullList.find(video => video.id === activeVid)}
             />
 
         </div>

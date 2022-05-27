@@ -1,5 +1,6 @@
 @use '../../Styles/partials/colors' as *;
 @use '../../Styles/partials/fonts' as *;
+@use '../../Styles/partials/mixins' as *;
 
 .comments__form {
     display: flex;
@@ -10,12 +11,24 @@
         padding-bottom: 1rem;
         border-bottom: 1px solid $Mercury;
 
+        @include tablet{
+            padding-bottom: 1.5rem;
+        }
+
+        @include tablet{
+            padding-right: 1.5rem;
+        }
+
         &-pfp {
             width: 2.5rem;
             height: 2.5rem;
             border-radius: 50%;
             margin-top: 1.5rem;
             object-fit: cover;
+
+            @include tablet{
+                margin-top: 1.3rem;
+            }
         }
         &-text {
             display: flex;
@@ -23,6 +36,13 @@
             width: 15rem;
             padding-left: 1rem;
             flex-grow: 1;
+
+            &--container{
+                @include tablet{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
         }
 
         &-title{
@@ -41,6 +61,12 @@
             resize: none;
             height: 5rem;
             background-color: $Alablaster;
+
+            @include tablet{
+                height: 2.5rem;
+                width: 32rem;
+                margin-bottom: 0;
+            }
         }
 
         &-textarea::placeholder{
@@ -64,6 +90,12 @@
             font-weight: 700;
             text-decoration: none;
             text-align: center;
+
+            @include tablet{
+                width: 10rem;
+                margin-left: 1.5rem;
+                height: 2.5rem;
+            }
         }
     }
 }

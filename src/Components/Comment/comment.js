@@ -1,12 +1,15 @@
 import './comment.scss';
+import {v4 as uuid } from 'uuid';
 
-function Comment({ fullList }) {
+function Comment({ currentVideo }) {
 
     return (
         <>
-            {fullList.comments.map(comment => {
+            {currentVideo.comments.map(comment => {
                 return (
-                    <div className="comment">
+                    <div 
+                    key={uuid()}
+                    className="comment">
                         <div className="comment__pfp--empty"></div>
                         <div className="comment__container">
 

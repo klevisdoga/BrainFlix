@@ -6,6 +6,7 @@ import VideoList from './Components/VideoList/videolist';
 import React from 'react';
 import shortList from './Data/videos.json';
 import longList from './Data/video-details.json';
+import VideoInfo from './Components/VideoInfo/videoinfo';
 
 
 class App extends React.Component {
@@ -32,31 +33,44 @@ class App extends React.Component {
       <div className="App">
         <Header />
         {this.state.fullList
-        .filter(video => video.id === this.state.activeVid)
-        .map((item) => (
-        <Video
-          key={item.id}
-          id={item.id}
-          image={item.image}
-          title={item.title}
-          channel={item.channel}
-          timestamp={item.timestamp}
-          views={item.views}
-          likes={item.likes}
-          description={item.description}
-          />
-        ))}
+          .filter(video => video.id === this.state.activeVid)
+          .map((item) => (
+            <Video
+              key={item.id}
+              id={item.id}
+              image={item.image}
+            />
+          ))}
+        <div className='videoinfo-and-list'>
+          <div className='videoinfo-and-comments'>
+          {this.state.fullList
+            .filter(video => video.id === this.state.activeVid)
+            .map((item) => (
+              <VideoInfo
+                key={item.id}
+                id={item.id}
+                title={item.title}
+                channel={item.channel}
+                timestamp={item.timestamp}
+                views={item.views}
+                likes={item.likes}
+                description={item.description}
+                length={item.comments.length}
+              />
+            ))}
 
-        <Comments
-          activeVid={this.state.activeVid}
-          fullList={this.state.fullList}
-        />
-        <VideoList
-          currentVideo={this.state.currentVideo}
-          sidebarVids={this.state.sidebarVids}
-          changeVid={this.changeVid}
-          activeVid={this.state.activeVid}
-        />
+          <Comments
+            activeVid={this.state.activeVid}
+            fullList={this.state.fullList}
+          />
+          </div>
+          <VideoList
+            currentVideo={this.state.currentVideo}
+            sidebarVids={this.state.sidebarVids}
+            changeVid={this.changeVid}
+            activeVid={this.state.activeVid}
+          />
+        </div>
       </div>
     );
   }
