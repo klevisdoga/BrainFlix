@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pfp from '../../Assets/Images/Mohan-muruge.jpg';
 import './nav.scss';
 
@@ -7,7 +8,7 @@ function Nav() {
             <form className="navbar__form">
                 <input className='navbar__form-search' type="text" id="searchBar" name="searchBar" placeholder="Search"/>
                 <img src={pfp} alt="profile" className='navbar__form-pfp' />
-                <a href='youtube.com' className='navbar__button'>UPLOAD</a>
+                <Link to='/upload' className='navbar__button'>UPLOAD</Link>
             </form>
             
         </nav>
