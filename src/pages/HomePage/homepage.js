@@ -21,7 +21,6 @@ class HomePage extends Component {
         this.setState({
           currentVideo: res.data
         })
-        console.log(this.state.currentVideo.comments)
       })
       .catch(error => {
         console.log('error in get FULL request' + error)
@@ -30,6 +29,7 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
+
     axios.get(videos)
       .then(res => {
         this.setState({
@@ -45,12 +45,16 @@ class HomePage extends Component {
   }
 
   componentDidUpdate() {
+    let videoId = this.props.match.params.videoId;
 
-    const videoId = this.props.match.params.videoId;
+    if( this.props.match.path === '/' && this.state.currentVideo.id !== this.state.videos[0].id ) {
 
-    if (this.state.currentVideo.id !== videoId) {
-      this.setVideo(videoId)
+      this.setVideo(this.state.videos[0].id)
     }
+    else if (this.state.currentVideo.id !== videoId) {
+
+      this.setVideo(videoId)
+    } 
   }
 
   render() {
