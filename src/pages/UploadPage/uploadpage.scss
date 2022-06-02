@@ -9,28 +9,83 @@
 
     &__body {
         padding: 1rem;
+
+        @include tablet {
+            padding: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        @include desktop{
+            padding: 7.5rem;
+            padding-top: 2rem;
+        }
     }
 
     &__title {
         margin-top: 0;
         padding: 0.5rem 0;
         font-size: 1.5rem;
+
+        @include tablet {
+            font-size: 2.06rem;
+            border-bottom: 1px solid $Mercury;
+            padding-bottom: 1.5rem;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
 
+        &-container{
+            display: flex;
+            flex-direction: column;
+
+            @include desktop{
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &--thumbnail{
+                display: flex;
+                flex-direction: column;
+            }
+
+            &--info{
+                @extend .upload__form-container--thumbnail;
+
+                @include desktop{
+                    width: 100%;
+                    padding-left: 2rem;
+                }
+            }
+        }
+
         &-image {
             border-radius: 4px;
             margin-bottom: 1rem;
-            min-height: 10rem;
+            height: 10rem;
+            width: 18rem;
+
+            @include tablet {
+                min-height: 12rem;
+                min-width: 22rem;
+            }
+
+            @include desktop{
+                min-height: 10.8rem;
+                min-width: 20rem;
+            }
 
             &--text {
                 font-size: 0.8rem;
                 font-weight: 700;
                 color: $Silver;
                 padding-bottom: 0.4rem;
+
+                @include tablet {
+                    padding-top: 0.4rem;
+                }
             }
         }
 
@@ -44,6 +99,11 @@
                 height: 2.5rem;
                 min-height: 0;
                 padding: 0.5rem;
+
+                @include tablet {
+                    width: 100%;
+                    padding-left: 1rem;
+                }
 
                 &::placeholder {
                     color: $BrainFlix-Black;
@@ -61,6 +121,20 @@
                 resize: none;
             }
         }
+        &-buttons {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                border-top: 1px solid $Mercury;
+                margin-top: 0.5rem;
+                padding-top: 0.2rem;
+            }
+        }
+
         &-button {
             text-decoration: none;
             text-align: center;
@@ -70,13 +144,19 @@
             background-color: $BrainFlix-Blue;
             width: 100%;
             height: 2.5rem;
-            margin-top: .5rem;
+            margin-top: 0.5rem;
             padding: 0.75rem;
             border-radius: 4px;
             background-image: url(../../Assets/Icons/publish.svg);
             background-color: $BrainFlix-Blue;
             background-repeat: no-repeat;
             background-position: left;
+
+            @include tablet {
+                order: 2;
+                width: 10rem;
+                margin-left: 4rem;
+            }
 
             &--cancel {
                 text-decoration: none;
