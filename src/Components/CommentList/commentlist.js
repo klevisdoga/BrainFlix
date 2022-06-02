@@ -1,13 +1,16 @@
 import Comment from "../Comment/comment"
-import {v4 as uuid } from 'uuid';
 
-function CommentList({activeVid, fullList}) {
+function CommentList({currentVideo}) {
+
+    if (currentVideo.comments === undefined) {
+        return '...'
+    }
+
     return (
         <div className="comment__section">
 
-            <Comment 
-            key={uuid()}
-            currentVideo={fullList.find(video => video.id === activeVid)}
+            <Comment
+                currentVideo={currentVideo}
             />
 
         </div>

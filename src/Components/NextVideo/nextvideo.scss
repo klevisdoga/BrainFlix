@@ -52,3 +52,7 @@
         @extend .video__list-video-title
     }
 }
+.video-link{
+    text-decoration: none;
+    color: $BrainFlix-Black;
+}

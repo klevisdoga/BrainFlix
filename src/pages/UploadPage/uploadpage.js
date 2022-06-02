@@ -3,7 +3,6 @@ import Header from '../../Components/Header/header';
 import uploadThumb from '../../Assets/Images/Upload-video-preview.jpg';
 import './uploadpage.scss';
 import { Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
 
 export default function UploadPage() {
 

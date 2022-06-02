@@ -2,6 +2,7 @@ import './comment.scss';
 import {v4 as uuid } from 'uuid';
 
 function Comment({ currentVideo }) {
+    
 
     return (
         <>
