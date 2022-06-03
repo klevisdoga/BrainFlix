@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 export default function UploadPage() {
 
+  const clickHandler = () => {
+    alert('Video Published!')
+  }
+
   return (
     <div className='upload'>
       <div className='upload__header'>
@@ -27,11 +31,12 @@ export default function UploadPage() {
             </div>
           </div>
           <div className='upload__form-buttons'>
-            <Link to='/' className='upload__form-button'>PUBLISH</Link>
+            <Link onClick={clickHandler} to='/' className='upload__form-button'>PUBLISH</Link>
             <Link to='/' className='upload__form-button--cancel'>CANCEL</Link>
           </div>
         </form>
       </div>
     </div>
   )
+
 }

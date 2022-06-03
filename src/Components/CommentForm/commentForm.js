@@ -2,11 +2,18 @@ import './commentForm.scss';
 import pfp from '../../Assets/Images/Mohan-muruge.jpg';
 
 function CommentForm() {
+
+    const submitForm = (ev) => {
+        ev.preventDefault();
+    }
+
     return (
         <div className="comments__form">
             <div className="comments__form-user">
                 <img src={pfp} alt="profile" className="comments__form-user-pfp" />
-                <form className="comments__form-user-text">
+                <form 
+                onSubmit={submitForm}
+                className="comments__form-user-text">
                     <label htmlFor="userComment" className="comments__form-user-title">JOIN THE CONVERSATION</label>
                     <div className='comments__form-user-text--container'>
                     <textarea name="userComment" id="userComment" cols="30" rows="10" placeholder="Add a new comment"
