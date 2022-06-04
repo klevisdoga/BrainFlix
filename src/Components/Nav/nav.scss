@@ -20,13 +20,13 @@
         padding-top: 1rem;
         flex-wrap: wrap;
 
-        @include tablet{
+        @include tablet {
             padding-top: 0;
             justify-content: space-evenly;
             flex-wrap: nowrap;
         }
 
-        @include desktop{
+        @include desktop {
             width: 50rem;
             justify-content: flex-end;
         }
@@ -60,7 +60,7 @@
                 margin-left: 1rem;
             }
 
-            @include desktop{
+            @include desktop {
                 margin-left: 2.5rem;
             }
         }
@@ -89,7 +89,7 @@
             margin-left: 1.5rem;
         }
 
-        @include desktop{
+        @include desktop {
             width: 18%;
         }
     }

@@ -1,17 +1,13 @@
-import './comments.scss';
-import CommentForm from '../CommentForm/commentForm';
-import CommentList from '../CommentList/commentlist';
+import './Comments.scss';
+import CommentForm from '../CommentForm/CommentForm';
+import CommentList from '../CommentList/CommentList';
 
-function Comments({ currentVideo }) {
+export default function Comments({ currentVideo }) {
 
     return (
         <section className="comments">
             <CommentForm />
-            <CommentList 
-            currentVideo={currentVideo}
-            />
+            <CommentList currentVideo={currentVideo}  />
         </section>
     )
 }
-
-export default Comments

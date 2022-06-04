@@ -1,15 +1,13 @@
-import Nav from '../Nav/nav';
+import Nav from '../Nav/Nav';
 import logo from '../../Assets/Logo/BrainFlix-logo.svg';
-import './header.scss';
+import './Header.scss';
 import { Link } from 'react-router-dom';
 
-function Header() {
+export default function Header() {
     return (
         <header className="header">
-            <Link to='/'><img className="header__logo" src={logo} alt="logo"/></Link>
-            <Nav/>
+            <Link to='/'><img className="header__logo" src={logo} alt="logo" /></Link>
+            <Nav />
         </header>
     )
 }
-
-export default Header

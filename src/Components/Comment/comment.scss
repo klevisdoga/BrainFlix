@@ -1,6 +1,5 @@
-@use '../../Styles/partials/colors' as *;
-@use '../../Styles/partials/mixins' as *;
-
+@use "../../Styles/partials/colors" as *;
+@use "../../Styles/partials/mixins" as *;
 
 .comment {
     display: flex;
@@ -8,23 +7,23 @@
     border-bottom: 1px solid $Mercury;
     padding-bottom: 1rem;
 
-    @include tablet{
+    @include tablet {
         margin-top: 1.6rem;
     }
 
-    @include desktop{
+    @include desktop {
         padding-right: 1.5rem;
         padding-bottom: 1.6rem;
     }
 
-    &__pfp--empty{
+    &__pfp--empty {
         width: 2.5rem;
         height: 2.5rem;
         border-radius: 50%;
         margin-top: 1rem;
         background-color: $Mercury;
 
-        @include desktop{
+        @include desktop {
             margin-top: 0;
         }
     }
@@ -32,7 +31,7 @@
     &__container {
         width: 80%;
 
-        @include tablet{
+        @include tablet {
             width: 100%;
             padding-left: 1.5rem;
         }
@@ -46,10 +45,10 @@
         &-name {
             font-size: 0.8rem;
 
-            @include tablet{
-                margin-bottom: .5rem;
+            @include tablet {
+                margin-bottom: 0.5rem;
                 margin-top: 0;
-                font-size: .87rem;
+                font-size: 0.87rem;
             }
         }
 
@@ -57,30 +56,30 @@
             font-size: 0.8rem;
             color: $Silver;
 
-            @include tablet{
-                font-size: .87rem;
+            @include tablet {
+                font-size: 0.87rem;
             }
         }
     }
     &__bottom {
         overflow-wrap: break-word;
 
-        @include desktop{
-            padding-right: .4rem;
+        @include desktop {
+            padding-right: 0.4rem;
         }
 
         &-comment {
             margin: 0;
             font-size: 0.8rem;
 
-            @include tablet{
-                font-size: .881rem;
+            @include tablet {
+                font-size: 0.881rem;
             }
         }
     }
 }
-.comment:last-child{
-    @include desktop{
+.comment:last-child {
+    @include desktop {
         border-bottom: none;
     }
 }

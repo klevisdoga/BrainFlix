@@ -1,14 +1,12 @@
-import NextVideo from '../NextVideo/nextvideo';
-import './videolist.scss';
+import NextVideo from '../NextVideo/NextVideo';
+import './VideoList.scss';
 
-export default function VideoList({currentVideo}) {
+export default function VideoList({ currentVideo }) {
 
-    return(
+    return (
         <section className="video__list">
             <h2 className='video__list-title'>NEXT VIDEOS</h2>
-            <NextVideo
-            currentVideo={currentVideo}
-            />
+            <NextVideo currentVideo={currentVideo} />
         </section>
     )
 }

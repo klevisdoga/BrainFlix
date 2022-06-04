@@ -1,13 +1,13 @@
-@use '../../Styles/partials/mixins' as *;
+@use "../../Styles/partials/mixins" as *;
 
 .comments {
     padding: 1rem;
 
-    @include tablet{
+    @include tablet {
         padding: 1rem 2rem;
     }
 
-    @include desktop{
+    @include desktop {
         padding-right: 0;
     }
 }

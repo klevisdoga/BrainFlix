@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../../Components/Header/header';
+import Header from '../../Components/Header/Header';
 import uploadThumb from '../../Assets/Images/Upload-video-preview.jpg';
-import './uploadpage.scss';
+import './UploadPage.scss';
 import { Link } from 'react-router-dom';
 
 export default function UploadPage() {

@@ -1,44 +1,42 @@
-import axios from 'axios'
-import React, { Component } from 'react'
-import Comments from '../../Components/Comments/comments'
-import Header from '../../Components/Header/header'
-import Video from '../../Components/Video/video'
-import VideoInfo from '../../Components/VideoInfo/videoinfo'
-import VideoList from '../../Components/VideoList/videolist'
+import axios from 'axios';
+import './HomePage.scss';
+import React, { Component } from 'react';
+import Comments from '../../Components/Comments/Comments';
+import Header from '../../Components/Header/Header';
+import Video from '../../Components/Video/Video';
+import VideoInfo from '../../Components/VideoInfo/VideoInfo';
+import VideoList from '../../Components/VideoList/VideoList';
 import { API_KEY, API_LINK, videos } from '../../Data/videoURL';
 
-class HomePage extends Component {
+export default class HomePage extends Component {
 
   state = {
     currentVideo: {},
     videos: []
   }
+
   setVideo = (id) => {
-    if(id !== undefined){
-    axios
-      .get(API_LINK + id + API_KEY)
-      .then(res => {
+    if (id !== undefined) {
+      axios.get(API_LINK + id + API_KEY).then(res => {
         this.setState({
           currentVideo: res.data
         })
       })
-      .catch(error => {
-        console.log('error in get FULL request' + error)
-      });
+        .catch(error => {
+          console.log('error in get FULL request' + error)
+        });
     }
   }
 
   componentDidMount() {
-
-    axios.get(videos)
-      .then(res => {
-        this.setState({
-          videos: res.data
-        })
-
-        const videoId = res.data[0].id;
-        this.setVideo(videoId)
+    axios.get(videos).then(res => {
+      this.setState({
+        videos: res.data
       })
+
+      const videoId = res.data[0].id;
+      this.setVideo(videoId)
+    })
       .catch(error => {
         console.log(error)
       });
@@ -47,14 +45,12 @@ class HomePage extends Component {
   componentDidUpdate() {
     let videoId = this.props.match.params.videoId;
 
-    if( this.props.match.path === '/' && this.state.currentVideo.id !== this.state.videos[0].id ) {
-
+    if (this.props.match.path === '/' && this.state.currentVideo.id !== this.state.videos[0].id) {
       this.setVideo(this.state.videos[0].id)
     }
     else if (this.state.currentVideo.id !== videoId) {
-
       this.setVideo(videoId)
-    } 
+    }
   }
 
   render() {
@@ -62,24 +58,15 @@ class HomePage extends Component {
     return (
       <div>
         <Header />
-        <Video
-          currentVideo={this.state.currentVideo}
-        />
+        <Video currentVideo={this.state.currentVideo} />
         <div className='videoinfo-and-list'>
           <div className='videoinfo-and-comments'>
-            <VideoInfo
-              currentVideo={this.state.currentVideo}
-            />
-
-            <Comments
-              currentVideo={this.state.currentVideo}
-            />
+            <VideoInfo currentVideo={this.state.currentVideo} />
+            <Comments currentVideo={this.state.currentVideo} />
           </div>
-          <VideoList
-            currentVideo={this.state.currentVideo}
-          />
-        </div></div>
+          <VideoList currentVideo={this.state.currentVideo} />
+        </div>
+      </div>
     )
   }
 }
-export default HomePage

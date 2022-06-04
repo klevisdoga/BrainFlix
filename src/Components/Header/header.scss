@@ -1,24 +1,24 @@
-@use '../../Styles/partials/mixins' as *;
-@use '../../Styles/partials/variables' as *;
+@use "../../Styles/partials/mixins" as *;
+@use "../../Styles/partials/variables" as *;
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
 
-    @include tablet{
+    @include tablet {
         flex-direction: row;
     }
 
-    @include desktop{
+    @include desktop {
         padding: 1rem 6rem;
     }
 
-    &__logo{
+    &__logo {
         width: 7.5rem;
 
-        @include tablet{
+        @include tablet {
             margin-left: 1.5rem;
         }
     }

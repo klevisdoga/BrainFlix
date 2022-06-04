@@ -1,14 +1,14 @@
-@use '../../Styles/partials/colors' as *;
-@use '../../Styles/partials/mixins' as *;
+@use "../../Styles/partials/colors" as *;
+@use "../../Styles/partials/mixins" as *;
 
 .video__info {
     padding: 0 1rem;
 
-    @include tablet{
+    @include tablet {
         padding: 0 2rem;
     }
 
-    @include desktop{
+    @include desktop {
         padding-right: 0;
         padding-left: 1rem;
     }
@@ -18,7 +18,7 @@
         padding-bottom: 1rem;
         border-bottom: 1px solid $Mercury;
 
-        @include tablet{
+        @include tablet {
             font-size: 2rem;
             border-bottom: none;
             margin-bottom: 0;
@@ -32,9 +32,9 @@
         padding-bottom: 1rem;
         border-bottom: 1px solid $Mercury;
 
-        @include tablet{
+        @include tablet {
             width: 100%;
-            padding-bottom: .5rem;
+            padding-bottom: 0.5rem;
         }
     }
 
@@ -42,7 +42,7 @@
         display: flex;
         flex-direction: column;
 
-        @include tablet{
+        @include tablet {
             flex-direction: row;
         }
     }
@@ -51,8 +51,8 @@
         font-size: 0.8rem;
         margin: 0;
 
-        @include tablet{
-            font-size: .87rem
+        @include tablet {
+            font-size: 0.87rem;
         }
     }
 
@@ -61,10 +61,10 @@
         color: $Silver;
         padding-top: 1rem;
 
-        @include tablet{
+        @include tablet {
             padding-top: 0;
             padding-left: 2rem;
-            font-size: .8rem
+            font-size: 0.8rem;
         }
     }
 
@@ -72,11 +72,11 @@
         @extend .video__info-one;
         margin-right: 2rem;
 
-        @include tablet{
+        @include tablet {
             margin-right: 0;
         }
 
-        @include desktop{
+        @include desktop {
             padding-right: 1.5rem;
         }
     }
@@ -99,7 +99,7 @@
         align-items: center;
         padding-top: 1rem;
 
-        @include tablet{
+        @include tablet {
             padding-top: 0;
             padding-left: 2rem;
         }
@@ -111,26 +111,26 @@
         }
     }
 
-    &-description{
-        font-size: .801rem;
+    &-description {
+        font-size: 0.801rem;
 
-        @include tablet{
-            padding-top: .5rem;
+        @include tablet {
+            padding-top: 0.5rem;
             padding-right: 1.6rem;
             margin-bottom: 2rem;
-            font-size: .87rem;
+            font-size: 0.87rem;
             line-height: 1.3rem;
         }
 
-        @include desktop{
-            font-size: .859rem;
+        @include desktop {
+            font-size: 0.859rem;
             padding-right: 1.5rem;
             padding-bottom: 1rem;
             line-height: 1.4rem;
         }
     }
 
-    &-comment-count{
+    &-comment-count {
         @extend .video__info-channel;
         font-weight: 700;
     }

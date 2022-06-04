@@ -1,6 +1,6 @@
-import Comment from "../Comment/comment"
+import Comment from "../Comment/Comment"
 
-function CommentList({currentVideo}) {
+export default function CommentList({ currentVideo }) {
 
     if (currentVideo.comments === undefined) {
         return '...'
@@ -8,13 +8,7 @@ function CommentList({currentVideo}) {
 
     return (
         <div className="comment__section">
-
-            <Comment
-                currentVideo={currentVideo}
-            />
-
+            <Comment currentVideo={currentVideo} />
         </div>
     )
 }
-
-export default CommentList

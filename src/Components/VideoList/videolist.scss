@@ -1,20 +1,24 @@
-@use '../../Styles/partials/colors' as *;
-@use '../../Styles/partials/fonts' as *;
-@use '../../Styles/partials/mixins' as *;
+@use "../../Styles/partials/colors" as *;
+@use "../../Styles/partials/fonts" as *;
+@use "../../Styles/partials/mixins" as *;
 
-.video__list{
+.video__list {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     padding-top: 0;
 
-    @include tablet{
+    @include tablet {
         padding: 1rem 2rem;
     }
 
-    &-title{
-        font-size: .801rem;
+    &-title {
+        font-size: 0.801rem;
         color: $Silver;
         margin-top: 0;
+    }
+    &-link {
+        text-decoration: none;
+        color: $BrainFlix-Black;
     }
 }
