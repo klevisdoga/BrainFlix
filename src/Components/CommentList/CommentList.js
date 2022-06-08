@@ -3,7 +3,7 @@ import Comment from "../Comment/Comment"
 export default function CommentList({ currentVideo }) {
 
     if (currentVideo.comments === undefined) {
-        return '...'
+        return ''
     }
 
     return (

@@ -17,7 +17,7 @@ export default class NextVideo extends Component {
       })
     })
   }
-
+  
   render() {
 
     return (
