@@ -2,7 +2,6 @@ import axios from 'axios';
 import './HomePage.scss';
 import React, { Component } from 'react';
 import Comments from '../../Components/Comments/Comments';
-import Header from '../../Components/Header/Header';
 import Video from '../../Components/Video/Video';
 import VideoInfo from '../../Components/VideoInfo/VideoInfo';
 import VideoList from '../../Components/VideoList/VideoList';
@@ -57,14 +56,13 @@ export default class HomePage extends Component {
 
     return (
       <div>
-        <Header />
         <Video currentVideo={this.state.currentVideo} />
         <div className='videoinfo-and-list'>
           <div className='videoinfo-and-comments'>
             <VideoInfo currentVideo={this.state.currentVideo} />
             <Comments currentVideo={this.state.currentVideo} />
           </div>
-          <VideoList currentVideo={this.state.currentVideo} />
+          <VideoList currentVideo={this.state.currentVideo} sidebar={this.state.videos}/>
         </div>
       </div>
     )

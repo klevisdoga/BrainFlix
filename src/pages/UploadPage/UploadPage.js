@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from '../../Components/Header/Header';
 import uploadThumb from '../../Assets/Images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 import { Link } from 'react-router-dom';
@@ -37,23 +36,17 @@ export default class UploadPage extends Component {
 
     if(this.state.wasClicked === true){
       return(
-        <>
-        <Header/>
         <div className='upload__modal'>
           <h1 className='upload__modal-title'>Video was published!!!</h1>
           <Link to='/' className='upload__modal-button--home'>Home</Link>
           <Link to='/upload' className='upload__modal-button--back'>Go Back</Link>
         </div>
-        </>
       )
     }
 
     return (
       
       <div className='upload'>
-        <div className='upload__header'>
-          <Header />
-        </div>
         <div className='upload__body'>
           <h1 className='upload__title'>Upload Video</h1>
           <form onSubmit={this.submitHandler} className='upload__form'>
